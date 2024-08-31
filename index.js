@@ -3,7 +3,9 @@ const app = express();
 const Article = require("./models/Article.js");
 
 app.use(express.json());
-
+app.get("/" ,(req , res) => {
+    res.send("Hello")
+})
 app.post("/articles", (req, res) => {
   const title = JSON.stringify(req.body.title);
   const body = JSON.stringify(req.body.body);
